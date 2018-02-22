@@ -50,10 +50,18 @@ To run the code as is and see the Offline First functionality in action, you'll 
 - Navigate into the project directory (the folder containing this repo) by typing `cd TBD HERE` 
 - Type `npm install` to install this project's dependencies. This will set you up with Express, which is how you'll serve the files locally.
 
-### 4. Set your environment variables and launch the app:
-- While still in the project directory on the command line, set your environment variables by typing `export MYCOUCHDB=<yourURLhere>` (replace `<yourURLhere>` with the URL you established in Step 1.)
+### 4. Create a `credentials.js` file:
+- Navigate into the `JS` directory by typing `cd js`. 
+- Create a new JavaScript file in this directory titled `credentials.js`. It's important that you spell this correctly, since the filename is already referenced in your `.gitignore` to prevent accidental upload of your credentials to GitHub at a later date. 
+- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1: `var remoteCouch = "YOUR_URL_HERE";`
+- Save the file and exit your editor.
+- **IMPORTANT SECURITY NOTE**: Although your `credentials.js` file won't be tracked by Git or uploaded to GitHub, it is among the files that will be served up when you launch the app in the next step, and a user could therefore inspect your code and view the contents of the file, gaining access to your remote database. **This setup is not suitable for production.**
+
+### 5. Launch the app:
+- Navigate back to the main project file using `cd ..`.
 - Type `npm start` and wait until you see the message `server is listening on 8000`
 - To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
+
 
 
 ## Testing the Offline First Functionality
