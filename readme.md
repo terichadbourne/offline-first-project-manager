@@ -2,46 +2,55 @@
 # Offline First Project Manager
 An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).
 
-For more on how this Progressive Web App was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, stay tuned for an upcoming blog series. 
+For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, stay tuned for an upcoming beginner-friendly blog series. 
 
 ## The purpose of the app
 
 ### For me, as a project management tool:
-This app is an offline-capable project management tool that I built to track the status of blog posts on the Offline Camp Medium publication. Using a simple web form, which adapts itself based on what I enter, it stores a record for each article in progress and lets me come back and edit that record later. It also creates a second webpage I can share with an author to provide resources they need and request resources I need in return. 
+This app is an offline-capable project management tool that I built to track the status of blog posts in the works for the [Offline Camp Medium publication](http://medium.com/offline-camp). Using a simple web form, which uses logic to hide and reveal certain questions depending on the data entered, it stores a record for each article in progress and lets me come back and edit that record later. It also creates a second webpage I can share with an author to provide resources they need and request resources I need in return. 
 
-Because I need to start this process while I'm on site at Offline Camp with very limited internet access, the app needs to load while offline and allow me to edit and save data without an internet connection. Since I collaborate with other editors and own many gadgets, the data ultimately needs to sync across multiple devices, browsers, and users. It requires an [Offline First](http://offlinefirst.org) design.  
+Because I need to start this process while I'm on site at [Offline Camp](http://offlinefirst.org/camp) with very limited internet access, the app needs to load while offline and allow me to edit and save data without an internet connection. Since I collaborate with other editors and own many gadgets, the data ultimately needs to sync across multiple devices, browsers, and users. It requires an [Offline First](http://offlinefirst.org) design.  
 
 ### For you, as a sample implementation of an offline-capable Progressive Web App:
-You can explore my code to see how PouchDB, Apache CouchDB™, Service Worker, and a Web App Manifest are used to create an Offline First experience in the form of a Progressive Web App. The nuances of what I'm using my own web form for don't matter. In fact, you'd most likely want to clone the repo and adapt the form logic to create another offline-capable, form-based web app, such as a to do list or shopping list app. 
+You can explore my code to see how PouchDB, Apache CouchDB™, Service Worker, and a Web App Manifest are used to create an Offline First experience in the form of a Progressive Web App. The nuances of what I'm using my own web form for don't matter. In fact, you'd most likely want to clone the repo and adapt the form logic to create another offline-capable, form-based web app that meets the custom needs of your own project.
+
+This is a simple, beginner-friendly web application built using only client-side code. In addition to its custom JavaScript, HTML, and CSS files, it relies on the great sync powers of PouchDB library. jQuery.js and normalize.css are used out of convience to simplify the front-end development, while Node.js and Express are used only to serve the project up locally for review. You don't need to understand server-side development to see what makes this application tick.
 
 
-## Offline First App Design
+## The Offline First functionality
 
-[Offline First](http://offlinefirst.org) is an approach to web development which plans for the most network-constrained environments first, adding
-more functionality if and when connections improve. Because the most important resources are cached locally, this design pattern leads to extremly performant (speedy) apps.
+The [Offline First](http://offlinefirst.org) approach to web development plans for the most constrained network environment first, enabling a great user experience even while the device is offline or has only an intermittent connection, and providing progressive enhancement as network conditions improve. This design also makes apps incredibly performant (fast!) on the best of networks. 
 
-This project management app works Offline First! The first time you load the page, a service worker caches the resources necessary for you to work offline on future visits. The app saves data locally first using PouchDB in your browser, then syncs to a remote CouchDB database (in this case, IBM Cloudant) whenever you have a connection. 
+PouchDB, CouchDB, Service Worker, and a Wep App Manifest are the primary tools that turn this simple project management tool into a high-performance, offline-capable Progressive Web App.
 
-Using multiple devices or browsers? It will all sync up automagically!
+**Data stays safe on your device, even while it's offline.**  
+Persistance of data entered by the user is achieved using the in-browser database PouchDB. This will allow your data to survive between sessions and when disconnected from the network. (Whether you're offline at an event or back in the office on your trusty Wi-Fi, you can still add new projects and modify existing ones.)
 
-You can learn more about Offline First methodology and use cases at [offlinefirst.org](http://offlinefirst.org) on in our Medium publication
-at [medium.com/offline-camp](http://medium.com/offline-camp).
+**Data syncs between devices when a connection is available.**  
+When a connection is available, the data is synced from the local device to a CouchDB database in the cloud, and can thus be shared across multiple devices or users. (Managing a project with a partner or need to access the data on both your phone and your laptop? No problem!)
+
+**The app loads quickly, even while offline.**  
+To keep the app itself functional while offline, a Service Worker is used to cache page resources (the most important HTML, CSS, and JavaScript files) when the web application is first visited. Each device must have a connection for this first visit, after which the app will be fully functional even while offline or in shoddy network conditions. (No more error messages or frustratingly slow page loads.)
+
+**The app can be installed on a mobile device.**  
+In combination with the Service Worker used for caching, a Web App Manifest containing metadata allows the app to become a Progressive Web App, an enhanced website that can be installed on a mobile device and can then be used with or without an internet connection. (It's secretly still a website, but you can access it through one of those handy dandy little app icons on your homescreen!)
+
+Explore the code in this GitHub repository to see how the Offline First design is applied.
 
 
 ## Running the App
 
-To run the code as is and see the Offline First functionality in action, you'll need to follow the steps below. 
+To see the Offline First functionality in action, you'll need to follow the steps below. 
 
-To keep the focus on the app's Offline First features, this sample implementation does not implement a secure server setup and is not suitable for production. (See the security note below for more detail.)
+**A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
 
-### 1. Prepare your CouchDB database and API key:
+### 1. Create a CouchDB database and API key and enable CORS:
 - Create an empty CouchDB database and get yourself set up with an API key. 
 - If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
-- In order to keep your (and my) credentials safe, you'll be setting an environment variable locally instead of hardcoding your creds into your code.
-- You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: https://<KEY>:<PASSWORD>@<USERNAME>.cloudant.com/<DATABASE>
+- You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
 - Ensure Cross-Origin Resource Sharing (CORS) is enabled on your database. (If using Cloudant, visit the CORS tab in your user settings.)
 
-### 2. Get your computer set up (if you haven't used Git or Node or NPM before): 
+### 2. Get your computer set up (skip this section if you and your laptop are already familiar with Git, Node, and NPM): 
 - Open your command line application (Terminal on a Mac).
 - Ensure you have Node and NPM installed. (WHAT SHOULD THEY DO TO CHECK?)
 - Ensure you have whatever you need to set up so you can use GitHub. (WHAT WOULD THAT BE? )
@@ -52,7 +61,7 @@ To keep the focus on the app's Offline First features, this sample implementatio
 - Navigate into the project directory (the folder containing this repo) by typing `cd TBD HERE` 
 - Type `npm install` to install this project's dependencies. This will set you up with Express, which is how you'll serve the files locally.
 
-### 4. Create a `credentials.js` file (SEE SECURITY NOTE BELOW):
+### 4. Create a `credentials.js` file (SEE SECURITY NOTE BELOW)
 - Navigate into the `JS` directory by typing `cd js`. 
 - Create a new JavaScript file in this directory titled `credentials.js`. It's important that you spell this correctly, since the filename is already referenced in your `.gitignore` to prevent accidental upload of your credentials to GitHub at a later date. 
 - Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1: `var remoteCouch = "YOUR_URL_HERE";`
@@ -76,7 +85,9 @@ For an example of a PWA built using the same technologies with more robust secur
 A new PouchDB database will be created in each browser you use to test the app. A great way to explore the offline syncing powers of PouchDB and CouchDB
 is to load the site in both Chrome and Firefox (modern implementations of which support service workers), thinking of them each as a different user or device. 
 
-You can now explore what happens if one user is online and another isn't. To do this, set just one browser to offline mode. (In Chrome, open the developer tools and select Network or Applications and then check the Offline box. In Firefox, go to Web Developer, then check Work Offline. In either case, you must refresh the page for the effect to take the place.) Because the app files are hosted locally, this will only simulate disconnecting from the remote CouchDB database, not from the resources that make up the page itself (the HTML, CSS, and JS files that create the user experience).
+You can now explore what happens if one user is online and another isn't. To do this, set just one browser to offline mode. (In Chrome, open the developer tools and select Network or Applications and then check the Offline box. In Firefox, go to Web Developer, then check Work Offline. In either case, you must refresh the page for the effect to take the place.) 
+
+Because the app files are hosted locally, this process will only simulate disconnecting from the remote CouchDB database, not from the resources that make up the page itself (the HTML, CSS, and JS files that create the user experience).
 
 ### Testing caching of resources (Service Worker): 
 In order to simulate loading the page from scratch while you're offline (after at least once accessing it while online), you'll need to kill the local server you started (by typing `Ctrl-C` in Terminal) and refresh the page. The
