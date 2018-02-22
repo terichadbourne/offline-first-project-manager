@@ -56,15 +56,15 @@ To see the Offline First functionality in action, you'll need to follow the step
 - Ensure you have whatever you need to set up so you can use GitHub. (WHAT WOULD THAT BE? )
 
 ### 3. Clone the repo and install dependencies:
-- In the command line, navigate to the folder inside of which you'd like to store this project. 
-- Clone this repo by typing `git clone <TBD HERE>`
-- Navigate into the project directory (the folder containing this repo) by typing `cd TBD HERE` 
-- Type `npm install` to install this project's dependencies. This will set you up with Express, which is how you'll serve the files locally.
+- In the command line, navigate to the directory (folder) inside of which you'd like to store this project. 
+- Clone this repo by typing `git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git`.
+- Navigate into the project directory (the folder containing the cloned repo) by typing `cd offline-first-project-manager`.
+- Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
-### 4. Create a `credentials.js` file (SEE SECURITY NOTE BELOW)
-- Navigate into the `JS` directory by typing `cd js`. 
-- Create a new JavaScript file in this directory titled `credentials.js`. It's important that you spell this correctly, since the filename is already referenced in your `.gitignore` to prevent accidental upload of your credentials to GitHub at a later date. 
-- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1: `var remoteCouch = "YOUR_URL_HERE";`
+### 4. Create a credentials file (SEE SECURITY NOTE BELOW)
+- Navigate into the `js` directory by typing `cd js`. 
+- Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
+- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: `var remoteCouch = "YOUR_URL_HERE";`
 - Save the file and exit your editor.
 
 ### 5. Launch the app (SEE SECURITY NOTE BELOW):
