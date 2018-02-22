@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize-7.0.0.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class=editorPage>
+<!--     <section id="todoapp"> -->
+
+    <div class="container">
+      <div class="tracker-content">
+        <header>
+
+        </header>
+
+        <section id="editor">  
+          <section id="article-app">
+            
+            <section id=do-next>
+
+                <button type="button" id="add-button" name="add-button">Add an Article</button>
+                <button type="button" id="reset-button" name="reset-button">Go Back (Discard Edits)</button>
+            </section> <!--end do-next--> 
+            <h1>Blog Tracker</h1>
+           
+
+            <form id="article-form" class="hidden bordered" >
+
+
+              
+       
+
+              <!-- <h3><span id="create-edit-header">Create</span> Article</h3> -->
+              <h3>Edit Article</h3>
+              <p>
+                <label for="title">Article Title</label><br>
+                <input type="text" size="100" id="title" name="article_name"  required />
+                <span class="form-warning">This field is required.</span>
+              <p>
+
+              <p>
+                <label for="articleType">Article Type</label><br>
+                <select id="articleType" name="articleType">
+                  <option value=""></option>
+                  <option value="session_recap">Session Recap</option>
+                  <option value="passion_talk">Passion Talk</option>
+                  <option value="event_recap">Event Recap</option>
+                  <option value="tutorial">Tutorial</option>
+                  <option value="other">Other</option>
+                </select>
+              </p>
+              <p class="session">
+                <label for="presenters" class="session">Presenter(s)</label><br>
+                <input type="text" id="presenters" name="presenters" class="session"/>
+              </p>
+              <p>
+                <label for="event">Event</label><br>
+                <select id="event" name="event">
+                  <option value=""></option>
+                  <option value="oregon2017">Offline Camp Oregon, November 2017</option>
+                  <option value="berlin2017">Offline Camp Berlin, April - May 2017</option>
+                  <option value="california2016">Offline Camp California, November 2016</option>
+                  <option value="catskills2016">Offline Camp Catskills, June 2016</option>
+                  <option value="none">None</option>
+                </select>
+              </p>
+
+              <h4>Author Detail: </h4>  
+              <p>
+                <label for="author">Author</label><br>
+                <input type="text" size="100" id="author" name="author" class="controlReveal"/><br class="reveal"><br class="reveal">
+                <label for="mediumUsername" class="reveal">Medium Username:</label><br class="reveal">
+                <input type="text" size="100" id="mediumUsername" name="mediumUsername" class="reveal" /><br class="reveal"><br class="reveal">
+                <input type="checkbox" id="mediumWriterAdded" name="mediumWriterAdded" class="reveal" /> <span class="reveal">Added as writer on Medium</span>
+              </p>
+
+              <div class="session">
+                <h4>Session Resources Available</h4>
+                <p>
+                  <input type="checkbox" id=roughVideoCheckbox name="roughVideoCheckbox" class="controlReveal"> Rough Cut Video
+                  <label for="roughVideoURL" class="reveal">available at:</label><br class="reveal">
+                  <input type="url" size="50px" id="roughVideoURL" name="roughVideoURL" class="reveal" placeholder="http://www.example.com" pattern="https?://.+"/>
+                  <span class="form-warning">Please enter a valid URL (starting with http:// or https:// or www.).</span>
+                </p>
+
+                <p>
+                  <input type="checkbox" id=notesCheckbox name="notesCheckbox" class="controlReveal"> Session Notes
+                  <label for="notesURL" class="reveal">available at:</label><br class="reveal">
+                  <input type="url" size="50px" id="notesURL" name="notesURL" placeholder="http://www.example.com" class="reveal" pattern="https?://.+"/>
+                  <span class="form-warning">Please enter a valid URL (starting with http:// or https:// or www.).</span>
+                </p>
+
+                <p>
+                  <input type="checkbox" id=picCheckbox name="picCheckbox" class="controlReveal"> Pictures of session in Progress
+                  <label for="picURL" class="reveal">available at:</label><br class="reveal">
+                  <input type="url" size="50px" id="picURL" name="picURL" placeholder="http://www.example.com" class="reveal" pattern="https?://.+"/>
+                  <span class="form-warning">Please enter a valid URL (starting with http:// or https:// or www.).</span>
+                </p>
+              </div> <!--//end session div -->
+
+              <h4>Publication &amp; Sharing Status: </h4>
+
+              <p>
+                <label for="targetDate">Target Date:</label><br>
+                <input type=date id="targetDate" name="targetDate"/>
+              </p>
+
+                <input type=checkbox id="draftReceived" name="draftReceived">
+                <label for="draftReceived">Draft Received</label>
+              </p>
+
+              <div class="drafted">
+                <p>
+                  <label for="draftURL" >Draft Article URL</label><br>
+                  <input type=url size="50px" id="draftURL" name="draftURL" placeholder="http://www.example.com" pattern="https?://.+" />
+                  <span class="form-warning">Please enter a valid URL (starting with http:// or https:// or www.).</span>
+                </p>
+                <p id=editor-options>
+                    <label for="editors">Editors:</label><br>
+
+                    <input type="checkbox" value="Bradley" id="Bradley" name="editors">
+                    <label for="Bradley">Bradley</label><br>
+
+                    <input type="checkbox" value="Gregor" id="Gregor" name="editors">
+                    <label for="Gregor">Gregor</label><br>
+
+                    <input type="checkbox" value="Steven" id="Steven" name="editors">
+                    <label for="Steven">Steven</label><br>
+
+                    <input type="checkbox" value="Teri" id="Teri" name="editors">
+                    <label for="Teri">Teri</label><br>
+                </p>
+                <p>
+
+                  <input type=checkbox size="100" id="editComplete" name="editComplete" >
+                  <label for="editComplete" >Editing Complete</label>
+                </p>
+                <p>
+
+                <div class="edited">
+
+                  <input type=checkbox id="testedTwitterCard" name="testedTwitterCard" >
+                  <label for="testedTwitterCard">Previewed Twitter card</label>
+
+                  <div class="cardTested">
+
+                    <div>
+                      <p>
+                        <input type=checkbox id="scheduled" name="scheduled" class="controlReveal">
+                        <label for="scheduled">Scheduled</label>
+
+                        <br class="reveal"><br class="reveal">
+ 
+                        <label for="scheduledDate" class="reveal">Scheduled Publication Date</label><br>
+                        <input type=date id="scheduledDate" name="scheduledDate" class="reveal"/><br class="reveal"><br class="reveal">
+                      </p>
+                    </div>
+                    <div> 
+                      <input type=checkbox id="published" name="published" class="controlReveal finalize">
+                      <label for="published">Published</label>
+                    
+                      <br class="reveal"><br class="reveal">
+
+                      <div id="finalStuffToDo" class="reveal bordered redBorder">
+                        
+                        <span id="finalWarning" class="red"><strong>You're not quite done yet.</strong> Please update the record with publishing details and complete these last steps so we can mark this article complete! <br><br></span>
+                      
+                        <label for="publishedURL" > Published Article URL</label><br>
+                        <input type=url size="50px" id="publishedURL" name="publishedURL" placeholder="http://www.example.com" pattern="https?://.+"/>
+                        <span class="form-warning">Please enter a valid URL (starting with http:// or https:// or www.).</span>
+                      
+                        <br><br>
+
+                        <label for="publishedDate" >Date Published</label><br>
+                        <input type=date id="publishedDate" name="publishedDate" />
+                        
+                        <br><br>
+
+                        <input type=checkbox id="updatedHomepage" name="updatedHomepage" class="finalize">
+                        <label for="updatedHomepage" class="finalize">Updated Medium Homepage (or intentionally chose not to)</label>
+                        
+                        <br><br>
+
+                        <input type=checkbox id="sharedTwitter" name="sharedTwitter" class="finalize">
+                        <label for="sharedTwitter">Shared on Twitter</label>
+                    
+                        <br><br>
+
+                        <input type=checkbox id="sharedSlack" name="sharedSlack" class="finalize">
+                        <label for="sharedSlack">Shared on Slack</label>
+
+                        <br><br>
+
+                        <input type=checkbox id="authorThanked" name="authorThanked" class="finalize">
+                        <label for="authorThanked">Thanked author and shared link to published article</label>
+                      </div> <!-- end finalStuffToDo div -->
+                  
+                    </div>
+
+                    <div class="finalized red">
+                      <input type=checkbox id="completed" name="completed">
+                      <label for="completed"><strong>Mark Article Complete</strong></label>
+                      <span class=trophy><br><br>🏆🏆🏆🏆🏆🏆🏆🏆🏆</span>
+                    </div> <!-- end finalized div-->
+
+                  </div> <!--end card tested div -->
+                </div> <!--end edited div -->
+              </div><!--end drafted div -->
+                      
+              <p>
+                <button type="button" id="submit_button" name="">Save &amp; Close</button>
+              </p>
+
+              <div id="pouch-secrets" class="bordered thin">
+                <p>
+                  <input type="hidden" id="_id" name="article_name"  disabled/>
+                  <input type="hidden" id="_rev" name="_rev"  disabled/>
+                  <input type="hidden" id="writerURL" name="writerURL" disabled/>
+                <h4>🙈 Nothing to <del>See</del> <ins>Edit</ins> Here 🙈</h4>
+                <p>
+                  Author's Page: <a id="insert_writerURL" target="_blank" href=""></a><br>
+                  Unique ID: <span id="insert_id"></span><br>
+                  Last Revision: <span id="insert_rev"></span>
+                </p>
+                <p>
+                  <em>This data is auto-generated/updated as needed for top secret database-y reasons. You may not edit these fields manually.</em>
+                </p>
+                <p id="delete-button-wrapper">
+                  <button type="button" id="delete-button" name="delete-button">☠️ Delete this record permanently ☠️</button> <<< <em>You probably shouldn't click this button.</em> <br><br>৫(”ړ৫)˒˒˒˒   Run away! <br><br> ʕ •́؈•̀ ₎ Oh, bother! 
+                </p>
+              </div> <!--end pouch secrets--> 
+
+
+
+            </form>
+
+            <div id="article-list-wrapper" class="bordered">
+              <div class = "bordered legend thin">
+                <h4>Filtered By: <span id="selectedClass">All Articles<span></h4> </p> 
+                <ul class = "legend">
+                  <li class="all"><strong class="all">All</strong></li>
+                 <br>
+                  <li class="nope"><strong class="nope">Status:</strong></li> 
+                  <li class="done">Completed &nbsp; &#127942; </li> 
+                  <li class="inProgress">In progress &nbsp; &#9997; </li>
+                  <li class="authorNeeded">Needs Author &nbsp; &#128587; </li>
+                </ul>
+                <ul class = "legend">
+                  <li class="nope"><strong class="nope">Editor:</strong></li> 
+                  <li class="Bradley">Bradley </li> 
+                  <li class="Gregor">Gregor </li> 
+                  <li class="Steven">Steven </li>
+                  <li class="Teri">Teri </li> 
+                </ul>
+              </div> <!-- legend div -->
+              <h3>View Articles</h3>
+              <p>Select an article below to view or edit.</p>
+              
+              <ul id="article-list"></ul>
+            </div> <!--end article-list-wrapper-->
+          </section> <!--end article-app-->
+        </section>  <!--end editor--> 
+
+          <div id="sync-wrapper" class="editorPage">
+            <strong>Sync Status: </strong><span id="sync-span"></span>
+          </div>
+
+        <footer>
+          <p><strong>This app works Offline First!</strong> The first time you load the page, a <strong>service worker</strong> caches the resources necessary for you to work offline in the future. The app saves data locally first using <strong>PouchDB</strong>, then syncs to a remote <strong>CouchDB</strong> database (in this case, Cloudant) whenever you have a connection. Using multiple devices or browsers? It will all sync up automagically!</p>
+          <p>Created by <a href="http://github.com/terichadbourne">Teri Chadbourne</a></p>
+        </footer>
+      </div>
+      <div id="toast-container">
+        <div id="alert" class="toast" ></div>
+      </div>
+    </div> <!-- end container -->
+    <script src="js/pouchdb-6.3.4.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/credentials.js"></script>
+    <script src="js/project-manager.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+.editorPage footer, .editorPage header {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
+button {
+	border-radius: 5px;
+	box-shadow: 2px 2px 1px #888888;
+	background-color: #3c2442;
+	padding: 10px;
+	color: #FFC7DF;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	color: #3c2442;
+
+}
+
+br + input, br + select {
+    margin-top: 5px;
+}
+
+footer {
+	color: #757575;
+}
+
+h1, h2, h3, h4 {
+	color: #3c2442;
+}
+
+#editor h1 {
+margin-left: 20px;
+}
+
+input {
+	border-radius: 5px;
+}
+
+input[type="text"] {
+	width: 400px;
+}
+
+.container {
+	max-width: 1200px;
+	padding: 20px;
+	margin: 20px;
+	border: thick #3c2442 solid;
+	border-radius: 20px;
+}
+
+.hide, .hidden, .reveal, .sessionRecap, .session, .passionTalk, .drafted, .edited, .cardTested, .finalized{
+  display: none;
+}
+
+.red {
+	color: red;
+}
+
+.bordered {
+	border: medium #3c2442 solid;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px;
+}
+
+.bordered.thin {
+	border: thin #3c2442 solid;
+}
+
+.redBorder {
+	border-color: red;
+}
+
+.show {
+  display: block;
+}
+
+.form-warning {
+	color: red;
+	font-weight: bold;
+	display: none;
+}
+
+.form-warning.invalid {
+	display: inline;
+}
+
+#pouch-secrets {
+	background-color: #FFC7DF;
+	margin-left: 0;
+	margin-top: 10px;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+
+}
+
+/*class of lis that are for completed articles*/
+li.done, li.done a {
+	color: green;
+}
+
+li.authorNeeded, li.authorNeeded a {
+	color: red;
+}
+
+/*reinstate if going back to other toast method
+
+/*#alert {
+	display:none;
+}*/
+
+#article-list-wrapper {
+	min-height: 300px;
+}
+}
+
+#article-list-wrapper li {
+	line-height: 1.5;
+
+}
+
+#article-list-wrapper h3 {
+	line-height: 1.5;
+	margin-top: 0;
+
+}
+
+#article-list-wrapper h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.toast {
+  /*bottom: -500%;*/
+  width: 100%;
+  transition: all .5s ease;
+  z-index: 2;
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 20px;
+  min-height: 20px;
+  box-shadow: 7px 7px 4px #888888;
+
+}
+
+
+/* change to display:block if going back to other toast method; */
+#alert.toast {
+	display: none;
+}
+
+#article-list {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+#toast-container {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+#sync-wrapper {
+	min-height: 20px;
+	border-radius: 20px;
+	background-color: blue;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+.editorPage#sync-wrapper {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.legend {
+	list-style-type: none;
+}
+
+div.legend {
+	display: inline;
+    float: right;
+    background-color: #FFC7DF;
+    margin: 0;
+}
+
+ul.legend {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+
+#add-button, #reset-button {
+	margin-right: 22px;
+    float: right;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #D7D7D7;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #D7D7D7;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #D7D7D7;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #D7D7D7;
+}

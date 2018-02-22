@@ -1,0 +1,18 @@
+{
+  "name": "Offline First Project Manager",
+  "short_name": "Project Manager",
+  "theme_color": "#3c2442",
+  "background_color": "#FFC7DF",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "start_url": "./",  
+  "scope": "./",
+  "icons": [
+    {
+      "src": "images/logo-450x450.png",
+      "sizes": "450x450",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}

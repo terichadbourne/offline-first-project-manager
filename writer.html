@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Offline First Blog Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize-7.0.0.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="writerPage">
+    <div class="container">
+      <header >
+  	   <h1>Getting Started on Your Blog Post</h1>
+      </header>
+
+      <section id="writer">
+
+       <h3>Way to be awesome, <span id="author"></span>!</h3>
+       <input id="articleType" type="hidden">
+
+        <p>Thanks so much for volunteering to write
+          <span class="notSession">about </span>
+          <span class="sessionRecap">up a recap of our <strong>unconference session</strong> on </span>
+          <span class="passionTalk">up a recap of our your <strong>passion talk</strong> on </span>
+          <strong><span id="title"><span></strong>
+          <span class=session>(and for all your great contributions at camp!)</span>
+          . </p>
+
+        <h4>Here’s how to get started (and finished):</h4>
+
+        <ul id="writerSteps">
+
+          <li id="mediumUsername"><strong>Please send us your Medium username</strong> so that we can add you as a writer to the <a target="_blank" href="http://medium.com/offline-camp">Offline Camp Medium publication</a>. If you haven't used Medium before, note that you can sign in with another social media account to <a target="_blank" href="https://medium.com/m/signin">get started</a>. (Try clicking the extra Sign In button for more social media network options.)</li>
+
+          <li class="session resourcesAvailable">Below you'll find links to any session audio, video, notes, or pics available, which you can use to <strong>jog your memory</strong> as needed.</li>
+
+          <li>Feel free to write as short or as long a story as you’d like.</li>
+
+          <li class="sessionRecap">You can find <strong>examples of other session recap posts</strong> in our <a target="_blank" href="http://medium.com/offline-camp">Medium publication</a>.
+
+          <li class="passionTalk">Once finalized, your passion talk video will be shared on our <a target="_blank" href="https://www.youtube.com/playlist?list=PL3-Vs4cmp6yRzfKJWKdQuUa_dBpuGGKZA">YouTube channel</a> and embedded in your Medium post. You can find <strong>examples of other passion talk posts</strong> <a target="_blank" href="http://medium.com/offline-camp">here</a>.</li>
+
+          <li>If you’re working on an Offline First project, feel free to mention it in your story. You might also want to </strong>link to relevant resources</strong> that provided added background on the topic at hand.</li>
+
+          <li>Please <strong>add the tag “Offline First,”</strong> as well as any other relevant tags for your topic, to your story using <a target="_blank" href="https://help.medium.com/hc/en-us/articles/214741038-Tags">these instructions</a>.</li>
+
+          <li>Every Medium story needs at least one <strong>featured image</strong> (which cannot be a video), and you may add additional images if you'd like. Please be sure to add captions and credit the source of each image. If you can't think of what to use for a featured image, just reach out and we can help brainstorm.</li>
+
+          <li> <span id="mediumWriterAdded"></span>you'll be able to <strong>add your draft post to the Offline Camp publication</strong> using <a target="_blank" href="https://help.medium.com/hc/en-us/articles/213904978-Add-draft-or-post-to-publication">these instructions</a> when you're ready. (Don't worry, that won't actually publish your article, just make it available to our editorial team for review.)</li>
+
+          <li><strong>Please let me know when you expect to be able to submit your draft</strong>. We’ve found that it's easiest to write within the first couple of weeks after Offline Camp while things are fresh in your memory.</li>
+
+
+        </ul> <!--  end writerSteps ul-->
+
+        <div class="session resourcesAvailable">
+          <h4>Here are the resources you can use to jog your memory:</h4>
+          <ul id="writerResources">
+            <li>Rough Cut Video: <a id="roughVideoURL" target="_blank" href="">test</a></li>
+            <li>Session Notes: <a id='notesURL' target="_blank" href="">test</a> </li>
+            <li>Pics of Session in Progress: <a id='picURL' target="_blank" href="">test</a> </li>
+          </ul>
+        </div>
+
+        <P>Thank you so much in advance for taking the time to work on this. Feel free to reach out with any questions, either by email or on Slack!</P>
+
+        <p>The Offline Camp Team</p>
+
+
+
+      </section>
+      <footer>
+        <!--<p>Created by <a href="http://github.com/terichadbourne">Teri Chadbourne</a></p> -->
+      </footer>
+      <div id="toast-container">
+        <div id="alert" class="toast" ></div>
+      </div><!-- end toast container -->
+    </div> <!-- end container -->
+    <script src="js/pouchdb-6.3.4.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/credentials.js"></script>
+    <script src="js/project-manager.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
+  </body>
+</html>
