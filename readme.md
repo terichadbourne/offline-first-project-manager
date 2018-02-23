@@ -73,7 +73,8 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 ### 4. Create a credentials file (SEE SECURITY NOTE BELOW)
 - Navigate into the `js` directory by typing `cd js`. 
 - Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
-- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: `var remoteCouch = "YOUR_URL_HERE";`
+- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
+<script src="https://gist.github.com/terichadbourne/3daec5a79a7c8ace9ef8d5cfac486c36.js"></script>
 - Save the file and exit your editor.
 
 ### 5. Launch the app (SEE SECURITY NOTE BELOW):
