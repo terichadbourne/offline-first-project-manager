@@ -72,7 +72,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 - If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
 - You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: 
 
-        `https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>`
+        https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
 - Ensure Cross-Origin Resource Sharing (CORS) is enabled on your database. (If using Cloudant, visit the CORS tab in your user settings.)
 
 ### 4. Create a credentials file (SEE SECURITY NOTE BELOW)
@@ -80,7 +80,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 - Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
 - Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
 
-        `var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";`
+        var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
 
 - Save the file and exit your editor.
 
