@@ -64,9 +64,9 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 ### 2. Clone the repo and install dependencies:
 - From the command line, navigate to the directory (folder) inside of which you'd like to store this project. (Here's a [command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/) if you need it.)
 - Clone this repo by typing: 
-        ```
-        git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
-        ```
+    ```
+    git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
+    ```
 - Navigate into the project directory (the folder containing the cloned repo) by typing `cd offline-first-project-manager`.
 - Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
