@@ -50,7 +50,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 2. Set up a new remote CouchDB database with CORS enabled.
 3. Add a new file titled `credentials.js` to the `js` directory. The one line of code in this file should be: 
 
-        `var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";`
+        var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
 
 4. Run `npm start` from the project directory and go to http://localhost:8000/.
 5. Due to [security concerns](#important-security-note), don't let anyone else use the app while you're running it.
