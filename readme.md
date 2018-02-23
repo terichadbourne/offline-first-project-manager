@@ -44,22 +44,31 @@ To see the Offline First functionality in action, you'll need to follow the step
 
 **A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
 
-### 1. Create a CouchDB database and API key and enable CORS:
+### Quick instructions for experienced coders:
+_(The **TL;DR** you're looking for if you're already familiar with the command line, Node.js, NPM, Git, GitHub, and CouchDB.)_
+1. Clone the repo and run `npm install`.
+2. Set up a new remote CouchDB database with CORS enabled.
+3. Add a new file titled `credentials.js` to the `js` directory. The one line of code in this file should be: `var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";`. 
+4. Run `npm start` from the project directory and go to http://localhost:8000/.
+5. Due to [security concerns](#important-security-note), don't let anyone else use the app while you're running it.
+
+### Detailed instructions:
+
+#### 1. Get set up with Node, NPM, Git, and GitHub.
+- Install Node and NPM (check out these installation tutorials for [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac) or [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows) if needed).
+- [Set up Git and GitHub](https://help.github.com/articles/set-up-git/).
+
+### 2. Clone the repo and install dependencies (`npm install`):
+- From the command line, navigate to the directory (folder) inside of which you'd like to store this project. (Here's a [command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/) if you need it.)
+- Clone this repo by typing `git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git`.
+- Navigate into the project directory (the folder containing the cloned repo) by typing `cd offline-first-project-manager`.
+- Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
+
+### 3. Create a CouchDB database and API key and enable CORS:
 - Create an empty CouchDB database and get yourself set up with an API key. 
 - If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
 - You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
 - Ensure Cross-Origin Resource Sharing (CORS) is enabled on your database. (If using Cloudant, visit the CORS tab in your user settings.)
-
-### 2. Get your computer set up (skip this section if you and your laptop are already familiar with Git, Node, and NPM): 
-- Open your command line application (Terminal on a Mac).
-- Ensure you have Node and NPM installed. (WHAT SHOULD THEY DO TO CHECK?)
-- Ensure you have whatever you need to set up so you can use GitHub. (WHAT WOULD THAT BE? )
-
-### 3. Clone the repo and install dependencies:
-- In the command line, navigate to the directory (folder) inside of which you'd like to store this project. 
-- Clone this repo by typing `git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git`.
-- Navigate into the project directory (the folder containing the cloned repo) by typing `cd offline-first-project-manager`.
-- Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
 ### 4. Create a credentials file (SEE SECURITY NOTE BELOW)
 - Navigate into the `js` directory by typing `cd js`. 
@@ -71,6 +80,7 @@ To see the Offline First functionality in action, you'll need to follow the step
 - Navigate back to the main project file using `cd ..`.
 - Type `npm start` and wait until you see the message `server is listening on 8000`
 - To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
+- To stop the server when you're done (or for testing purposes as described below, use Control-C.
 
 ### IMPORTANT SECURITY NOTE: 
 Although your `credentials.js` file won't be tracked by Git or uploaded to GitHub, it is among the files that will be served up when you launch the app. This means that a user could therefore inspect your code and view the contents of the file, gaining access to your remote database. **This setup is not suitable for production.**
@@ -79,7 +89,7 @@ For an example of a PWA built using the same technologies with more robust secur
 
 
 
-## Testing the Offline First Functionality
+## Testing the Offline First functionality
 
 ### Test offline data entry and syncing between devices (PouchDB & CouchDB): 
 A new PouchDB database will be created in each browser you use to test the app. A great way to explore the offline syncing powers of PouchDB and CouchDB
@@ -97,7 +107,7 @@ service worker should have cached relevant resources so you should see no change
 Something with Ngrok TBD
 
 
-## Resources and Additional Reading 
+## Resources and additional reading 
 - Blog series coming soon!
 - [PouchDB](https://pouchdb.com/) 
 - [Apache CouchDB™](http://couchdb.apache.org/)
