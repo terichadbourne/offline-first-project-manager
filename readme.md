@@ -49,6 +49,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 1. Clone the repo and run `npm install`.
 2. Set up a new remote CouchDB database with CORS enabled.
 3. Add a new file titled `credentials.js` to the `js` directory. The one line of code in this file should be: 
+
         ```
         var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
         ``` 
