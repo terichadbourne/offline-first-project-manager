@@ -50,8 +50,9 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 2. Set up a new remote CouchDB database with CORS enabled.
 3. Add a new file titled `credentials.js` to the `js` directory. The one line of code in this file should be: 
 
-        var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
-
+    ```
+    var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
+    ```
 4. Run `npm start` from the project directory and go to http://localhost:8000/.
 5. Due to [security concerns](#important-security-note), don't let anyone else use the app while you're running it.
 
@@ -67,27 +68,31 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
     ```
     git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
     ```
-- Navigate into the project directory (the folder containing the cloned repo) by typing `cd offline-first-project-manager`.
+- Navigate into the project directory (the folder containing the cloned repo) by typing: 
+    ```
+    cd offline-first-project-manager
+    ```
 - Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
 ### 3. Create a CouchDB database and API key and enable CORS:
 - Create an empty CouchDB database and get yourself set up with an API key. 
 - If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
 - You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: 
-
-        https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
+    ```
+    https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
+    ```
 - Ensure Cross-Origin Resource Sharing (CORS) is enabled on your database. (If using Cloudant, visit the CORS tab in your user settings.)
 
-### 4. Create a credentials file (SEE SECURITY NOTE BELOW)
+### 4. Create a credentials file (see [security note](#important-security-note)):
 - Navigate into the `js` directory by typing `cd js`. 
 - Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
 - Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
-
-        var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
-
+    ```
+    var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
+    ```
 - Save the file and exit your editor.
 
-### 5. Launch the app (SEE SECURITY NOTE BELOW):
+### 5. Launch the app (see [security note](#important-security-note)):
 - Navigate back to the main project file using `cd ..`.
 - Type `npm start` and wait until you see the message `server is listening on 8000`
 - To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
@@ -96,7 +101,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 ### IMPORTANT SECURITY NOTE: 
 Although your `credentials.js` file won't be tracked by Git or uploaded to GitHub, it is among the files that will be served up when you launch the app. This means that a user could therefore inspect your code and view the contents of the file, gaining access to your remote database. **This setup is not suitable for production.**
 
-For an example of a PWA built using the same technologies with more robust security measures, check out this [sample implementation of a shopping list app](https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb). It requires each user, device, or browser to enter their own CouchDB credentials, which are stored locally in PouchDB.
+For an example of a PWA built using the same technologies with more robust security measures, check out this [sample implementation of a shopping list app](https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb). It requires each user, device, or browser to enter their own CouchDB credentials, which are stored locally in PouchDB in a spot that does not get synced to the remote database.
 
 
 
