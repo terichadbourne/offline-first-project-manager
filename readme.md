@@ -4,6 +4,15 @@ An offline-capable project management tool, built as a Progressive Web App by [T
 
 For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, stay tuned for an upcoming beginner-friendly blog series. 
 
+**Jump to...**
+- [The purpose of the app](#the-purpose-of-the-app)
+- [The Offline First functionality](#the-offline-first-functionality)
+- [Running the app](#running-the-app)
+- [Testing the Offline First functionality](#testing-the-offline-first-functionality)
+- [Resources and additional reading](#resources-and-additional-reading)
+- [License](#license)     
+
+
 ## The purpose of the app
 
 ### For me, as a project management tool:
@@ -38,7 +47,7 @@ In combination with the Service Worker used for caching, a Web App Manifest cont
 Explore the code in this GitHub repository to see how the Offline First design is applied.
 
 
-## Running the App
+## Running the app
 
 To see the Offline First functionality in action, you'll need to follow the steps below. 
 
