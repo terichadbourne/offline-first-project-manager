@@ -74,10 +74,12 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 ### 2. Clone the repo and install dependencies:
 - From the command line, navigate to the directory (folder) inside of which you'd like to store this project. (Here's a [command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/) if you need it.)
 - Clone this repo by typing: 
+
     ```
     git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
     ```
 - Navigate into the project directory (the folder containing the cloned repo) by typing: 
+
     ```
     cd offline-first-project-manager
     ```
@@ -87,6 +89,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 - Create an empty CouchDB database and get yourself set up with an API key. 
 - If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
 - You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: 
+
     ```
     https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
     ```
@@ -96,6 +99,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 - Navigate into the `js` directory by typing `cd js`. 
 - Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
 - Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
+
     ```
     var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
     ```
