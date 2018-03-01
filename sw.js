@@ -22,7 +22,7 @@ self.addEventListener('install', function(e) {
   );
  });
 
-// use cache first, then network
+// load from cache first, then network if available
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
