@@ -171,6 +171,10 @@ Service Worker should have cached relevant resources so you should see no change
 ### Testing installing to homescreen (Web App Manifest): 
 Instructions coming soon.
 
+## Project file structure
+To help you explore the code, I've created this guide to what files create what functionality: 
+
+![](doc/source/images/create_db.png)
 
 ## Resources and additional reading 
 - Blog series coming soon!
