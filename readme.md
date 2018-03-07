@@ -7,7 +7,8 @@ For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB,
 **Jump to...**
 - [The purpose of the app](#the-purpose-of-the-app)
 - [The Offline First functionality](#the-offline-first-functionality)
-- [Running the app](#running-the-app)
+- [Running the app: Quickstart for experienced coders](#running-the-app-quickstart-for-experienced-coders)
+- [Running the app: Step-by-step instructions](#running-the-app-step-by-step-instructions)
 - [Testing the Offline First functionality](#testing-the-offline-first-functionality)
 - [The project's file structure](#the-projects-file-structure)
 - [Resources and additional reading](#resources-and-additional-reading)
@@ -48,14 +49,11 @@ In combination with the Service Worker used for caching, a Web App Manifest cont
 Explore the code in this GitHub repository to see how the Offline First design is applied.
 
 
-## Running the app
-
-To see the Offline First functionality in action, you'll need to follow the steps below. 
-
-**A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is **not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
-
-### Quick instructions for experienced coders:
+## Running the app: Quickstart for experienced coders
 _(The **TL;DR** you're looking for if you're already familiar with the command line, Node.js, NPM, Git, GitHub, and CouchDB.)_
+
+After reviewing the [security concerns](#important-security-note), follow these instruction to run the app locally and see the Offline First functionality in action: 
+
 1. Clone the repo and run `npm install`.
 2. Set up a new remote CouchDB database with CORS enabled.
 3. Add a new file titled `credentials.js` to the `js` directory. The one line of code in this file should be: 
@@ -66,7 +64,11 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 4. Run `npm start` from the project directory and go to http://localhost:8000/.
 5. Due to [security concerns](#important-security-note), don't let anyone else use the app while you're running it.
 
-### Detailed instructions:
+## Running the app: Step-by-step instructions
+
+To see the Offline First functionality in action, you'll need to follow the steps below. 
+
+**A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is **not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
 
 ### 1. Get set up with Node, NPM, Git, and GitHub:
 
