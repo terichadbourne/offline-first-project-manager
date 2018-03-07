@@ -1,6 +1,6 @@
 
 # Offline First Project Manager
-An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).
+**An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).**
 
 For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, stay tuned for an upcoming beginner-friendly blog series. 
 
@@ -9,6 +9,7 @@ For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB,
 - [The Offline First functionality](#the-offline-first-functionality)
 - [Running the app](#running-the-app)
 - [Testing the Offline First functionality](#testing-the-offline-first-functionality)
+- [The project's file structure](#the-projects-file-structure)
 - [Resources and additional reading](#resources-and-additional-reading)
 - [License](#license)     
 
@@ -171,10 +172,10 @@ Service Worker should have cached relevant resources so you should see no change
 ### Testing installing to homescreen (Web App Manifest): 
 Instructions coming soon.
 
-## Project file structure
-To help you explore the code, I've created this guide to what files create what functionality: 
+## The project's file structure
+Here's a quick look at the project's file structure, to guide your exploration of the code in this repo:
 
-![](doc/source/images/create_db.png)
+![](doc/source/images/file_structure.png)
 
 ## Resources and additional reading 
 - Blog series coming soon!
