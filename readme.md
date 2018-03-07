@@ -51,7 +51,7 @@ Explore the code in this GitHub repository to see how the Offline First design i
 
 To see the Offline First functionality in action, you'll need to follow the steps below. 
 
-**A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
+**A note on security:** To keep the focus on the front-end code that provides the app's offline functionality, this sample implementation has simplified the server-side elements and **does not currently protect your login credentials** for CouchDB. It is **not suitable for production**. (See the **[security note](#important-security-note)** below for more detail.)
 
 ### Quick instructions for experienced coders:
 _(The **TL;DR** you're looking for if you're already familiar with the command line, Node.js, NPM, Git, GitHub, and CouchDB.)_
@@ -122,7 +122,7 @@ For an example of a PWA built using the same technologies with more robust secur
 
 ### Test offline data entry and syncing between devices (PouchDB & CouchDB): 
 A new PouchDB database will be created in each browser you use to test the app. A great way to explore the offline syncing powers of PouchDB and CouchDB
-is to load the site in both Chrome and Firefox (modern implementations of which support service workers), thinking of them each as a different user or device. 
+is to load the site in both Chrome and Firefox (modern implementations of which support Service Workers), thinking of them each as a different user or device. 
 
 You can now explore what happens if one user is online and another isn't. To do this, set just one browser to offline mode. (In Chrome, open the developer tools and select Network or Applications and then check the Offline box. In Firefox, go to Web Developer, then check Work Offline. In either case, you must refresh the page for the effect to take the place.) 
 
@@ -130,10 +130,10 @@ Because the app files are hosted locally, this process will only simulate discon
 
 ### Testing caching of resources (Service Worker): 
 In order to simulate loading the page from scratch while you're offline (after at least once accessing it while online), you'll need to kill the local server you started (by typing `Ctrl-C` in Terminal) and refresh the page. The
-service worker should have cached relevant resources so you should see no change in functionality with this test. (On a website without a Service Worker, you'd be seeing a 404(?) error or Chrome's famous downasaur.)
+Service Worker should have cached relevant resources so you should see no change in functionality with this test. (On a website without a Service Worker, you'd be seeing a 404(?) error or Chrome's famous downasaur.)
 
 ### Testing installing to homescreen (Web App Manifest): 
-Something with Ngrok TBD
+Instructions coming soon.
 
 
 ## Resources and additional reading 
