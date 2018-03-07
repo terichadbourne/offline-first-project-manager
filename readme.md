@@ -68,71 +68,84 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 ### Detailed instructions:
 
 #### 1. Get set up with Node, NPM, Git, and GitHub:
-- Install Node and NPM. (Check out these installation tutorials for [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac) or [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows) if needed.)
-- [Set up Git and GitHub](https://help.github.com/articles/set-up-git/).
+
+Install Node and NPM. (Check out these installation tutorials for [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac) or [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows) if needed.)
+
+[Set up Git and GitHub](https://help.github.com/articles/set-up-git/).
 
 ### 2. Clone the repo and install dependencies:
-- From the command line, navigate to the directory (folder) inside of which you'd like to store this project. (Here's a [command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/) if you need it.)
-- Clone this repo by typing: 
 
-    ```
-    git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
-    ```
-- Navigate into the project directory (the folder containing the cloned repo) by typing: 
+From the command line, navigate to the directory (folder) inside of which you'd like to store this project. (Here's a [command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/) if you need it.)
 
-    ```
-    cd offline-first-project-manager
-    ```
-- Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
+Clone this repo by typing: 
+
+```
+git clone https://github.com/ibm-watson-data-lab/offline-first-project-manager.git
+```
+
+Navigate into the project directory (the folder containing the cloned repo) by typing: 
+
+```
+cd offline-first-project-manager
+```
+
+Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
 ### 3. Create a Cloudant or CouchDB service
-- PouchDB can synchronize with CouchDB and compatible servers. To run and test locally, you can install CouchDB. Alternatively, you can use a hosted IBM Cloudant NoSQL DB service for your remote DB. In either case, you'll need a new database accessible via a URL with a top-secret API key built in. You'll also need CORS enabled. 
+PouchDB can synchronize with CouchDB and compatible servers. To run and test locally, you can install CouchDB. Alternatively, you can use a hosted IBM Cloudant NoSQL DB service for your remote DB. In either case, you'll need a new database accessible via a URL with a top-secret API key built in. You'll also need CORS enabled. 
 
 #### Option A: Install Apache CouchDB
 
-- [Install CouchDB 2.1](http://docs.couchdb.org/en/2.1.0/install/index.html). Instructions are available for installing CouchDB 2.1 on Unix-like systems, on Windows, on Mac OS X, on FreeBSD, and via other methods.
+[Install CouchDB 2.1](http://docs.couchdb.org/en/2.1.0/install/index.html). Instructions are available for installing CouchDB 2.1 on Unix-like systems, on Windows, on Mac OS X, on FreeBSD, and via other methods.
 
-- Configure CouchDB for a [single-node setup](http://docs.couchdb.org/en/2.1.0/install/setup.html#single-node-setup), as opposed to a cluster setup. Once you have finished setting up CouchDB, you should be able to access CouchDB at `http://127.0.0.1:5984/`. Ensure that CouchDB is running and take note of your admin username and password.
+Configure CouchDB for a [single-node setup](http://docs.couchdb.org/en/2.1.0/install/setup.html#single-node-setup), as opposed to a cluster setup. Once you have finished setting up CouchDB, you should be able to access CouchDB at `http://127.0.0.1:5984/`. Ensure that CouchDB is running and take note of your admin username and password.
 
 #### Option B: Create a Cloudant NoSQL DB service
 
-To provision a managed Cloudant NoSQL DB: 
+To provision a managed Cloudant NoSQL DB, log in to [IBM Cloud](https://console.ng.bluemix.net/). (Sign up for an account, if you do not already have one.)
 
-* Log in to [IBM Cloud](https://console.ng.bluemix.net/).
-   > Sign up for an account, if you do not already have one.
-* [Provision a Cloudant NoSQL DB _Lite_ plan instance](https://console.bluemix.net/catalog/services/cloudant-nosql-db), which is free.
-  > If desired, you can also re-use an existing Cloudant NoSQL DB service instance. (Open the [**Data & Analytics**  resources dashboard](https://console.bluemix.net/dashboard/data) to see a list of pre-provisioned instances that you have access to.) 
- * Open the **Service credentials** tab.
-* Add new credentials for this service instance if no credentials have been defined yet.
-* View the credentials and note the value of the **url** property, which has the following format: `https://username:password@username-bluemix.cloudant.com`.
+[Provision a Cloudant NoSQL DB _Lite_ plan instance](https://console.bluemix.net/catalog/services/cloudant-nosql-db), which is free. 
+
+Open the **Service credentials** tab.
+
+Add new credentials for this service instance if no credentials have been defined yet.
+
+View the credentials and note the value of the **url** property, which has the following format: `https://username:password@username-bluemix.cloudant.com`.
 
 Tip: Select the **Manage** tab and click **Launch** to open the Cloudant dashboard and manage the service instance.
  
 ### 4. Set up your remote Cloudant or CouchDB database and enable CORS 
 
-* From your Cloudant or CouchDB dashboard, select the Databases tab on the left and then use the `Create Database` button to create the "blog-tracker-beta" database.
+From your Cloudant or CouchDB dashboard, select the Databases tab on the left and then use the `Create Database` button to create the "blog-tracker-beta" database.
 
 ![](doc/source/images/create_db.png)
 
-* To enable Cross-Origin Resource Sharing (CORS), select the Account Settings (or config) tab and open the **CORS** tab. Enable CORS and restrict the domain as needed for security.
+To enable Cross-Origin Resource Sharing (CORS), select the Account Settings (or config) tab and open the **CORS** tab. Enable CORS and restrict the domain as needed for security.
 
 ![](doc/source/images/enable_cors.png)
 
 ### 5. Create a credentials file (see [security note](#important-security-note)):
-- Navigate into the `js` directory by typing `cd js`. 
-- Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
-- Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
+Navigate into the `js` directory by typing `cd js`. 
 
-    ```
-    var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
-    ```
-- Save the file and exit your editor.
+Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
+
+Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
+
+```
+var remoteCouch = "YOUR_REMOTE_COUCHDB_URL_HERE";
+```
+
+Save the file and exit your editor.
 
 ### 6. Launch the app (see [security note](#important-security-note)):
-- Navigate back to the main project file using `cd ..`.
-- Type `npm start` and wait until you see the message `server is listening on 8000`
-- To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
-- To stop the server when you're done (or for testing purposes as described below, use Control-C.
+
+Navigate back to the main project file using `cd ..`.
+
+Type `npm start` and wait until you see the message `server is listening on 8000`
+
+To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
+
+To stop the server when you're done (or for testing purposes as described below, use Control-C.
 
 ### IMPORTANT SECURITY NOTE: 
 Although your `credentials.js` file won't be tracked by Git or uploaded to GitHub, it is among the files that will be served up when you launch the app. This means that a user could therefore inspect your code and view the contents of the file, gaining access to your remote database. **This setup is not suitable for production.**
