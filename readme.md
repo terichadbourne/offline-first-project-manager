@@ -85,17 +85,40 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
     ```
 - Type `npm install` to install this project's dependencies. This will set you up with the files you need for Express, a Node.js web application framework that will deal with some server stuff while we focus on the client-side code.
 
-### 3. Create a CouchDB database and API key and enable CORS:
-- Create an empty CouchDB database and get yourself set up with an API key. 
-- If you haven't used CouchDB before, one easy option is to create a new database on Cloudant, which takes care of the hosting for you. After creating a new database, click on Permissions and then Generate API Key. Write down the Key and Password generated in a safe place, because Cloudant will never show them to you again. 
-- You'll need a URL that references your database, with your top-secret API key built in. If you choose to use Cloudant, it will look like this: 
+### 3. Create a Cloudant or CouchDB service
+- PouchDB can synchronize with CouchDB and compatible servers. To run and test locally, you can install CouchDB. Alternatively, you can use a hosted IBM Cloudant NoSQL DB service for your remote DB. In either case, you'll need a new database accessible via a URL with a top-secret API key built in. You'll also need CORS enabled. 
 
-    ```
-    https://KEY:PASSWORD@USERNAME.cloudant.com/<DATABASE>
-    ```
-- Ensure Cross-Origin Resource Sharing (CORS) is enabled on your database. (If using Cloudant, visit the CORS tab in your user settings.)
+#### Option A: Install Apache CouchDB
 
-### 4. Create a credentials file (see [security note](#important-security-note)):
+- [Install CouchDB 2.1](http://docs.couchdb.org/en/2.1.0/install/index.html). Instructions are available for installing CouchDB 2.1 on Unix-like systems, on Windows, on Mac OS X, on FreeBSD, and via other methods.
+
+- Configure CouchDB for a [single-node setup](http://docs.couchdb.org/en/2.1.0/install/setup.html#single-node-setup), as opposed to a cluster setup. Once you have finished setting up CouchDB, you should be able to access CouchDB at `http://127.0.0.1:5984/`. Ensure that CouchDB is running and take note of your admin username and password.
+
+#### Option B: Create a Cloudant NoSQL DB service
+
+To provision a managed Cloudant NoSQL DB: 
+
+* Log in to [IBM Cloud](https://console.ng.bluemix.net/).
+   > Sign up for an account, if you do not already have one.
+* [Provision a Cloudant NoSQL DB _Lite_ plan instance](https://console.bluemix.net/catalog/services/cloudant-nosql-db), which is free.
+  > If desired, you can also re-use an existing Cloudant NoSQL DB service instance. (Open the [**Data & Analytics**  resources dashboard](https://console.bluemix.net/dashboard/data) to see a list of pre-provisioned instances that you have access to.) 
+ * Open the **Service credentials** tab.
+* Add new credentials for this service instance if no credentials have been defined yet.
+* View the credentials and note the value of the **url** property, which has the following format: `https://username:password@username-bluemix.cloudant.com`.
+
+Tip: Select the **Manage** tab and click **Launch** to open the Cloudant dashboard and manage the service instance.
+ 
+### 4. Set up your remote Cloudant or CouchDB database and enable CORS 
+
+* From your Cloudant or CouchDB dashboard, select the Databases tab on the left and then use the `Create Database` button to create the "blog-tracker-beta" database.
+
+![](doc/source/images/create_db.png)
+
+* To enable Cross-Origin Resource Sharing (CORS), select the Account Settings (or config) tab and open the **CORS** tab. Enable CORS and restrict the domain as needed for security.
+
+![](doc/source/images/enable_cors.png)
+
+### 5. Create a credentials file (see [security note](#important-security-note)):
 - Navigate into the `js` directory by typing `cd js`. 
 - Create a new JavaScript file in this directory titled `credentials.js`. It's very important that you spell this correctly, since the filename is already referenced in your `.gitignore` file to prevent accidental upload of your CouchDB credentials to GitHub at a later date. 
 - Add the following line of code to your `credentials.js` file, inserting the URL you establish in Step 1 and keeping the quotation marks you see here: 
@@ -105,7 +128,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
     ```
 - Save the file and exit your editor.
 
-### 5. Launch the app (see [security note](#important-security-note)):
+### 6. Launch the app (see [security note](#important-security-note)):
 - Navigate back to the main project file using `cd ..`.
 - Type `npm start` and wait until you see the message `server is listening on 8000`
 - To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
