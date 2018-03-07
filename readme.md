@@ -67,7 +67,7 @@ _(The **TL;DR** you're looking for if you're already familiar with the command l
 
 ### Detailed instructions:
 
-#### 1. Get set up with Node, NPM, Git, and GitHub:
+### 1. Get set up with Node, NPM, Git, and GitHub:
 
 Install Node and NPM. (Check out these installation tutorials for [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac) or [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows) if needed.)
 
