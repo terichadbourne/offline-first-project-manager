@@ -2,7 +2,12 @@
 # Offline First Project Manager
 **An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).**
 
-For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, stay tuned for an upcoming beginner-friendly blog series. 
+For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, hop over to Medium to read my beginner-friendly tutorial series:
+- [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
+- [Part 2: Ensuring quick page loads — offline or not — with a service worker](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
+- Part 3: Making the web app installable with a Web App Manifest (coming soon)
+
+Or stick right here on GitHub to explore my code or run the app yourself.
 
 **Jump to...**
 - [The purpose of the app](#the-purpose-of-the-app)
@@ -180,7 +185,15 @@ Here's a quick look at the project's file structure, to guide your exploration o
 ![](doc/source/images/file_structure.png)
 
 ## Resources and additional reading 
-- Blog series coming soon!
+
+For a closer look at the steps I took to build this offline-capable Progressive Web App using only client-side code, check out my beginner-friendly tutorial series:
+
+- [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
+- [Part 2: Ensuring quick page loads — offline or not — with a service worker](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
+- Part 3: Making the web app installable with a Web App Manifest (coming soon)
+
+To explore the technologies used and learn more about Offline First, take a look at these additional resources:
+
 - [PouchDB](https://pouchdb.com/) 
 - [Apache CouchDB™](http://couchdb.apache.org/)
 - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
