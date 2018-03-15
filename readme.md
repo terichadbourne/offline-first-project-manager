@@ -2,12 +2,19 @@
 # Offline First Project Manager
 **An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).**
 
-For more on how this Progressive Web App (PWA) was built using PouchDB, CouchDB, Service Worker, and a Wep App Manifest, hop over to Medium to read my beginner-friendly tutorial series:
-- [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
-- [Part 2: Ensuring quick page loads — offline or not — with a service worker](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
-- Part 3: Making the web app installable with a Web App Manifest (coming soon)
+This offline-capable Progressive Web App was built with PouchDB, CouchDB, service workers, and a web app manifest. It uses only client-side code. You can read more below about its Offline First design pattern, explore the code here on GitHub, or run the app yourself by following the instructions below.
 
-Or stick right here on GitHub to explore my code or run the app yourself.
+___
+This project is featured in my talk, **Offline First: Making Your App Awesome When the Network Isn't**. 
+
+You can read the companion beginner-friendly blog series on Medium: 
+- [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
+- [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
+- Part 3: Making the web app installable with a web app manifest (coming soon)
+
+[Resources shared in my talk](#resources-and-additional-reading) can be found below.
+
+___
 
 **Jump to...**
 - [The purpose of the app](#the-purpose-of-the-app)
@@ -28,7 +35,7 @@ This app is an offline-capable project management tool that I built to track the
 Because I need to start this process while I'm on site at [Offline Camp](http://offlinefirst.org/camp) with very limited internet access, the app needs to load while offline and allow me to edit and save data without an internet connection. Since I collaborate with other editors and own many gadgets, the data ultimately needs to sync across multiple devices, browsers, and users. It requires an [Offline First](http://offlinefirst.org) design.  
 
 ### For you, as a sample implementation of an offline-capable Progressive Web App:
-You can explore my code to see how PouchDB, Apache CouchDB™, Service Worker, and a Web App Manifest are used to create an Offline First experience in the form of a Progressive Web App. The nuances of what I'm using my own web form for don't matter. In fact, you'd most likely want to clone the repo and adapt the form logic to create another offline-capable, form-based web app that meets the custom needs of your own project.
+You can explore my code to see how PouchDB, Apache CouchDB™, service workers, and a web app manifest are used to create an Offline First experience in the form of a Progressive Web App. The nuances of what I'm using my own web form for don't matter. In fact, you'd most likely want to clone the repo and adapt the form logic to create another offline-capable, form-based web app that meets the custom needs of your own project.
 
 This is a simple, beginner-friendly web application built using only client-side code. In addition to its custom JavaScript, HTML, and CSS files, it relies on the great sync powers of PouchDB library. jQuery.js and normalize.css are used out of convience to simplify the front-end development, while Node.js and Express are used only to serve the project up locally for review. You don't need to understand server-side development to see what makes this application tick.
 
@@ -37,7 +44,7 @@ This is a simple, beginner-friendly web application built using only client-side
 
 The [Offline First](http://offlinefirst.org) approach to web development plans for the most constrained network environment first, enabling a great user experience even while the device is offline or has only an intermittent connection, and providing progressive enhancement as network conditions improve. This design also makes apps incredibly performant (fast!) on the best of networks. 
 
-PouchDB, CouchDB, Service Worker, and a Wep App Manifest are the primary tools that turn this simple project management tool into a high-performance, offline-capable Progressive Web App.
+PouchDB, CouchDB, service workers, and a wep app manifest are the primary tools that turn this simple project management tool into a high-performance, offline-capable Progressive Web App.
 
 **Data stays safe on your device, even while it's offline.**  
 Persistance of data entered by the user is achieved using the in-browser database PouchDB. This will allow your data to survive between sessions and when disconnected from the network. (Whether you're offline at an event or back in the office on your trusty Wi-Fi, you can still add new projects and modify existing ones.)
@@ -46,10 +53,10 @@ Persistance of data entered by the user is achieved using the in-browser databas
 When a connection is available, the data is synced from the local device to a CouchDB database in the cloud, and can thus be shared across multiple devices or users. (Managing a project with a partner or need to access the data on both your phone and your laptop? No problem!)
 
 **The app loads quickly, even while offline.**  
-To keep the app itself functional while offline, a Service Worker is used to cache page resources (the most important HTML, CSS, and JavaScript files) when the web application is first visited. Each device must have a connection for this first visit, after which the app will be fully functional even while offline or in shoddy network conditions. (No more error messages or frustratingly slow page loads.)
+To keep the app itself functional while offline, a service worker is used to cache page resources (the most important HTML, CSS, and JavaScript files) when the web application is first visited. Each device must have a connection for this first visit, after which the app will be fully functional even while offline or in shoddy network conditions. (No more error messages or frustratingly slow page loads.)
 
 **The app can be installed on a mobile device.**  
-In combination with the Service Worker used for caching, a Web App Manifest containing metadata allows the app to become a Progressive Web App, an enhanced website that can be installed on a mobile device and can then be used with or without an internet connection. (It's secretly still a website, but you can access it through one of those handy dandy little app icons on your homescreen!)
+In combination with the service worker used for caching, a web app manifest containing metadata allows the app to become a Progressive Web App, an enhanced website that can be installed on a mobile device and can then be used with or without an internet connection. (It's secretly still a website, but you can access it through one of those handy dandy little app icons on your homescreen!)
 
 Explore the code in this GitHub repository to see how the Offline First design is applied.
 
@@ -151,7 +158,7 @@ Navigate back to the main project file using `cd ..`.
 
 Type `npm start` and wait until you see the message `server is listening on 8000`
 
-To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of Service Worker) and navigate to: http://localhost:8000/
+To load the app, open a modern Chrome or Firefox browser (to ensure you receive all the benefits of service workers) and navigate to: http://localhost:8000/
 
 To stop the server when you're done (or for testing purposes as described below, use Control-C.
 
@@ -166,17 +173,17 @@ For an example of a PWA built using the same technologies with more robust secur
 
 ### Test offline data entry and syncing between devices (PouchDB & CouchDB): 
 A new PouchDB database will be created in each browser you use to test the app. A great way to explore the offline syncing powers of PouchDB and CouchDB
-is to load the site in both Chrome and Firefox (modern implementations of which support Service Workers), thinking of them each as a different user or device. 
+is to load the site in both Chrome and Firefox (modern implementations of which support service workers), thinking of them each as a different user or device. 
 
 You can now explore what happens if one user is online and another isn't. To do this, set just one browser to offline mode. (In Chrome, open the developer tools and select Network or Applications and then check the Offline box. In Firefox, go to Web Developer, then check Work Offline. In either case, you must refresh the page for the effect to take the place.) 
 
 Because the app files are hosted locally, this process will only simulate disconnecting from the remote CouchDB database, not from the resources that make up the page itself (the HTML, CSS, and JS files that create the user experience).
 
-### Testing caching of resources (Service Worker): 
+### Testing caching of resources (service workers): 
 In order to simulate loading the page from scratch while you're offline (after at least once accessing it while online), you'll need to kill the local server you started (by typing `Ctrl-C` in Terminal) and refresh the page. The
-Service Worker should have cached relevant resources so you should see no change in functionality with this test. (On a website without a Service Worker, you'd be seeing a 404(?) error or Chrome's famous downasaur.)
+service worker should have cached relevant resources so you should see no change in functionality with this test. (On a website without a service worker, you'd be seeing a 404(?) error or Chrome's famous downasaur.)
 
-### Testing installing to homescreen (Web App Manifest): 
+### Testing installing to homescreen (web wpp manifest): 
 Instructions coming soon.
 
 ## The project's file structure
@@ -189,22 +196,46 @@ Here's a quick look at the project's file structure, to guide your exploration o
 For a closer look at the steps I took to build this offline-capable Progressive Web App using only client-side code, check out my beginner-friendly tutorial series:
 
 - [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
-- [Part 2: Ensuring quick page loads — offline or not — with a service worker](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
-- Part 3: Making the web app installable with a Web App Manifest (coming soon)
+- [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
+- Part 3: Making the web app installable with a web app manifest (coming soon)
 
 To explore the technologies used and learn more about Offline First, take a look at these additional resources:
 
+Offline First
+- [Offline First resources](https://medium.com/offline-camp/offline-first-resources-2acc5836e9d4)
+- [Offline First](http://offlinefirst.org/)
+- [Offline Camp Medium publication](https://medium.com/offline-camp)
+- [Offline First YouTube channel](https://www.youtube.com/OfflineFirst)
+- [Offline Camp](http://offlinefirst.org/camp/)
+
+PouchDB & CouchDB
 - [PouchDB](https://pouchdb.com/) 
 - [Apache CouchDB™](http://couchdb.apache.org/)
 - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
-- [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
-- [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
-- [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
-- [Offline First](http://offlinefirst.org/)
-- [Offline Camp](http://offlinefirst.org/camp/)
-- [Offline Camp Medium publication](https://medium.com/offline-camp)
-- [Additional Offline First resources](https://medium.com/offline-camp/offline-first-resources-2acc5836e9d4)
-- [Offline First sample implementations in a variety of stacks](https://ibm-watson-data-lab.github.io/shopping-list/)
+- [Sample implementations on offline-capable shopping list apps built with PouchDB & CouchDB in a variety of stacks](https://ibm-watson-data-lab.github.io/shopping-list/)
+- [Curated articles on PouchDB, PouchDB & Hoodie](https://medium.com/offline-camp/couchdb-pouchdb-hoodie/home) from the Offline Camp Medium publication 
+- [Offline First Apps with PouchDB (video)](https://www.youtube.com/watch?v=7L7esHWAjSU&t=45s) by Bradley Holt
+
+Service Workers
+- [Service Workers: An Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/) by Matt Gaunt
+- [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md) by the WC3 
+- [The Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) by Jake Archibald
+- [Debugging Service Workers (Code Lab)](https://developers.google.com/web/fundamentals/codelabs/debugging-service-workers/) by Rob Dodson
+- [Curated articles on Service Workers & PWAs](https://medium.com/offline-camp/progressive-web-apps-service-workers/home) from the Offline Camp Medium publication
+- [Browser support for Service Workers](https://caniuse.com/#feat=serviceworkers)
+- [Offline Web Applications using IndexedDB & Service Worker](https://www.udacity.com/course/offline-web-applications--ud899) (free Udacity course taught by Google instructors)
+
+
+Progressive Web Apps
+- [Progressive Web Apps resources from the team at Google](https://developers.google.com/web/progressive-web-apps/)
+- [Your First Progressive Web App (Code Lab)](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/) by Pete LePage
+- [Lighthouse](developers.google.com/web/tools/lighthouse) (performance audits for your PWA)
+- [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) (essential for make a PWA installable to the home screen)
+
+Developer Tools 
+- [Debugging in Chrome](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
+- [Debugging in Firefox](https://developer.mozilla.org/en-US/docs/Tools/about:debugging)
+
 
 ## License
 [Apache 2.0](LICENSE)
