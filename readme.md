@@ -12,7 +12,9 @@ You can read the companion beginner-friendly blog series on Medium:
 - [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
 - Part 3: Making the web app installable with a web app manifest (coming soon)
 
-[Resources and slides shared in my talk](#resources-and-additional-reading) can be found below.
+[Resources shared in my talk](#resources-and-additional-reading) can be found below.
+
+The slides from my talk can be seen [here](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf). 
 
 ___
 
@@ -198,10 +200,6 @@ For a closer look at the steps I took to build this offline-capable Progressive 
 - [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
 - [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
 - Part 3: Making the web app installable with a web app manifest (coming soon)
-
-My slide deck from the talk "Offline First: Making Your App Awesome When the Network Isn't" is below: 
-
-<embed src="doc/source/images/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf" type="application/pdf" />
 
 To explore the technologies used and learn more about Offline First, take a look at these additional resources:
 
