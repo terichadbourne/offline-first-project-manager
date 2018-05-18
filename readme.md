@@ -10,7 +10,6 @@ This project is featured in my talk, **Offline First: Making Your App Awesome Wh
 You can read the companion beginner-friendly blog series on Medium: 
 - [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
 - [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
-- Part 3: Making the web app installable with a web app manifest (coming soon)
 
 [Resources shared in my talk](#resources-and-additional-reading) can be found below.
 
@@ -185,7 +184,7 @@ Because the app files are hosted locally, this process will only simulate discon
 In order to simulate loading the page from scratch while you're offline (after at least once accessing it while online), you'll need to kill the local server you started (by typing `Ctrl-C` in Terminal) and refresh the page. The
 service worker should have cached relevant resources so you should see no change in functionality with this test. (On a website without a service worker, you'd be seeing a 404(?) error or Chrome's famous downasaur.)
 
-### Testing installing to homescreen (web wpp manifest): 
+### Testing installing to homescreen (web app manifest): 
 Instructions coming soon.
 
 ## The project's file structure
@@ -199,7 +198,6 @@ For a closer look at the steps I took to build this offline-capable Progressive 
 
 - [Part 1: Enabling offline data storage, sync, and sharing with PouchDB and Apache CouchDB™](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-1-3ed530c2523)
 - [Part 2: Ensuring quick page loads — offline or not — with service workers](https://medium.com/ibm-watson-data-lab/making-your-app-awesome-when-the-network-isnt-part-2-669ee36e2f81)
-- Part 3: Making the web app installable with a web app manifest (coming soon)
 
 To explore the technologies used and learn more about Offline First, take a look at these additional resources:
 
@@ -226,7 +224,6 @@ Service Workers
 - [Curated articles on Service Workers & PWAs](https://medium.com/offline-camp/progressive-web-apps-service-workers/home) from the Offline Camp Medium publication
 - [Browser support for Service Workers](https://caniuse.com/#feat=serviceworkers)
 - [Offline Web Applications using IndexedDB & Service Worker](https://www.udacity.com/course/offline-web-applications--ud899) (free Udacity course taught by Google instructors)
-
 
 Progressive Web Apps
 - [Progressive Web Apps resources from the team at Google](https://developers.google.com/web/progressive-web-apps/)
