@@ -13,9 +13,9 @@ You can read the companion beginner-friendly blog series on Medium:
 
 [Resources shared in my talk](#resources-and-additional-reading) can be found below.
 
-The slides from my past talks are available here:
-- [We RISE Tech Conference](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/Making_Your_App_Awesome_When_the_Network_Isnt_Teri_Chadbourne_We_RISE_2018.pdf) (June 22, 2018)
-- [Women Who Code Boston Meetup](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf) (March 20, 2018)
+Slides and videos from my past talks are available here:
+- We RISE Tech Conference (June 22, 2018) | [Slides](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/Making_Your_App_Awesome_When_the_Network_Isnt_Teri_Chadbourne_We_RISE_2018.pdf) | [Video](https://www.recallact.com/presentation/offline-first-making-your-app-awesome-when-network-isnt)
+- Women Who Code Boston Meetup (March 20, 2018) | [Slides](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf)
 
 ___
 
