@@ -1,6 +1,6 @@
 
 # Offline First Project Manager
-**An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://github.com/terichadbourne).**
+**An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://terichadbourne.com/).**
 
 This offline-capable Progressive Web App was built with PouchDB, CouchDB, service workers, and a web app manifest. It uses only client-side code. You can read more below about its Offline First design pattern, explore the code here on GitHub, or run the app yourself by following the instructions below.
 
@@ -14,6 +14,13 @@ You can read the companion beginner-friendly blog series on Medium:
 [Resources shared in my talk](#resources-and-additional-reading) can be found below.
 
 Slides and videos from my past talks are available here:
+
+*Conference* | *Date* | *Slides* | *Video*
+--- | --- | --- | --- 
+We RISE Tech Conference | June 22, 2018 | [Slides](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/Making_Your_App_Awesome_When_the_Network_Isnt_Teri_Chadbourne_We_RISE_2018.pdf) | [Video](https://www.recallact.com/presentation/offline-first-making-your-app-awesome-when-network-isnt) 
+Women Who Code Boston Meetup | March 20, 2018 | [Slides](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf) | n/a 
+
+
 - We RISE Tech Conference (June 22, 2018) | [Slides](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/Making_Your_App_Awesome_When_the_Network_Isnt_Teri_Chadbourne_We_RISE_2018.pdf) | [Video](https://www.recallact.com/presentation/offline-first-making-your-app-awesome-when-network-isnt)
 - Women Who Code Boston Meetup (March 20, 2018) | [Slides](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf)
 
