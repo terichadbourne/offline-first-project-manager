@@ -16,9 +16,10 @@ Links to [resources mentioned in my talk](#resources-and-additional-reading) can
 Slides and videos from some of my past talks are available at the following links:
 
 Conference | Date | Slides | Video
-:--- | :--- | :--- | :--- 
+:--- | :--- | :--- | :---
+Node+JS Interactive | October 11, 2018 | [Slides](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/NJSIMakingYourAppAwesomeWhenTheNetworkIsnt.pdf) | [Video](https://www.youtube.com/watch?v=clnKHXuThg0) (30 min)
 We RISE Tech Conference | June 22, 2018 | [Slides](https://github.com/terichadbourne/offline-first-project-manager/blob/master/doc/source/pdf/Making_Your_App_Awesome_When_the_Network_Isnt_Teri_Chadbourne_We_RISE_2018.pdf) | [Video](https://www.recallact.com/presentation/offline-first-making-your-app-awesome-when-network-isnt) (40 min)
-Women Who Code Boston Meetup | March 20, 2018 | [Slides](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf) | n/a 
+Women Who Code Boston Meetup | March 20, 2018 | [Slides](https://github.com/ibm-watson-data-lab/offline-first-project-manager/blob/master/doc/source/pdf/Offline_First_Making_Your_App_Awesome_When_the_Network_Isnt.pdf) | n/a
 
 
 ___
