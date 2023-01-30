@@ -1,6 +1,6 @@
 
 # Offline First Project Manager
-**An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne]([https://terichadbourne.com/](https://teri.dev/)).**
+**An offline-capable project management tool, built as a Progressive Web App by [Teri Chadbourne](https://teri.dev/)).**
 
 This offline-capable Progressive Web App was built with PouchDB, CouchDB, service workers, and a web app manifest. It uses only client-side code. You can read more below about its Offline First design pattern, explore the code here on GitHub, or run the app yourself by following the instructions below.
 
